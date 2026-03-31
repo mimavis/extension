@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Mi Mavis",
+  "version": "1.0.0",
+  "description": "Abre Mi Mavis y oculta el banner lazyBanner en m365.cloud.microsoft.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA+Cm3pEu9WEn/T9pV6GW5J0lsFsaG1U6vzlgQCsDauphs7db0DqUjU5Z1vjHS7IpxgcVI1CeNo6FstynMwTnglh6OEIZPkkWBfinxrFiCKwPnfIqj4ZoXr8aVsU7EQly3L074vs0CUnxS5t+wUhdMqcxrfOXPB2y3hIjf5AkRe+QxcGdaNM5r9UYEAgt5oGyNmEdADdO16pkMtRg9ptmcc8sGQ2yAI9Wl1ox3sRSSONAfW07txqNy5XsfD0VvHIi2ROyC05Spt/9/9cROithcnNH4uW7MjjiLGkqjMZAB/TxPT1qSPyhQ8VkJ6A3eCsQM9kwWdqPqKcqFa0tYTwBYFQIDAQAB",
+  "permissions": [
+    "windows"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Mi Mavis",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://m365.cloud.microsoft/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
